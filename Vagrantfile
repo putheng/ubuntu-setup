@@ -72,6 +72,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path:"boot.sh"
 
   # Setup vhost
-  config.vm.provision "shell", path:"vhost.sh"
+  #config.vm.provision "shell", path:"vhost.sh"
 
 end

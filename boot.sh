@@ -9,6 +9,9 @@ sudo apt-get install python-software-properties
 # Update
 sudo apt-get update
 
+#Install Git
+sudo apt-get install -y git
+
 # Install Nginx
 sudo apt-get -y install unzip zip nginx
 
@@ -26,12 +29,15 @@ sudo service php7.2-fpm restart
 sudo service php7.0-fpm restart
 sudo service php5.6-fpm restart
 
-# Set MySql User, Password
+# Set MySql User, Password will be root
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
 # Install MySql
 sudo apt-get install -y mysql-server
+
+# Install Composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # Remove default Nginx host
 rm -f /etc/nginx/sites-enabled/default
