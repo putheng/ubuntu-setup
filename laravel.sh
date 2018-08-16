@@ -49,3 +49,18 @@ server {
     ssl_certificate_key /etc/nginx/ssl/laravelspace.io.key;
 }
 EOF
+
+
+## Change the group ownership of the storage and bootstrap/cache directories to www-data.
+sudo chgrp -R www-data /var/www/html/default/bootstrap/cache
+
+sudo chgrp -R www-data /var/www/html/default/storage 
+
+## Recursively grant all permissions, including write and execute, to the group.
+sudo chmod -R ug+rwx /var/www/html/default/bootstrap/cache
+
+sudo chmod -R ug+rwx /var/www/html/default/storage 
+
+
+
+

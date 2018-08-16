@@ -3,8 +3,8 @@ sudo add-apt-repository ppa:ondrej/php
 
 #If you’re missing add-apt-repository, like some plain systems are, 
 #install it and then add-apt-repository ppa:ondrej/php
-sudo apt-get install software-properties-common
-sudo apt-get install python-software-properties
+sudo apt-get -y install software-properties-common
+sudo apt-get -y install python-software-properties
 
 # Update
 sudo apt-get update
@@ -33,6 +33,9 @@ sudo service php7.1-fpm restart
 sudo service php7.0-fpm restart
 sudo service php5.6-fpm restart
 
+# Update
+sudo apt-get update
+
 # Set MySql User, Password will be root
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
@@ -53,7 +56,7 @@ sudo add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
 sudo apt-get update
 
 # Install HHVM
-sudo apt-get install hhvm
+sudo apt-get -y install hhvm
 
 #script which makes the integration with Nginx
 sudo /usr/share/hhvm/install_fastcgi.sh
@@ -84,7 +87,7 @@ server {
 	root /var/www/html/default;
 	index index.php index.html;
 
-	server_name putheng.com;
+	server_name laravelspace.com;
 
 	location ~* \.php\$ {
 		# With php-fpm unix sockets
