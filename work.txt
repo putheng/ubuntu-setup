@@ -1,0 +1,21 @@
+Work flow
+=========
+
+Create user
+	1. validation
+	2. instart to database
+	3. create git dir /home/git/username
+	4. create nginx dir /homes/username also store in db
+	5. 
+
+Create app
+	1. validate unique app with database and insert into db
+	2. create mysql user and database, dbuser, dbname append with app id
+	3. setup nginx virtual host root dir /homes/username/appname appname-username.laravelbuildapp.com
+		- store in database for validate when user change to custom URL
+	4. chmod /homes/username/appname
+	5. create git repository name /home/git/username/appname.git
+		- store in database for validate when user change to custom
+	6. git post-receive to execute permisstion
+		- work-tree=/homes/username/appname git-dir=/home/git/username/appname.git
+	7. set plan quota to /homes/username/appname  
