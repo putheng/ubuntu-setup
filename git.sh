@@ -1,4 +1,4 @@
-### Setup git hook
+### Setup git server side
 
 # Create git user
 sudo adduser git
@@ -26,3 +26,8 @@ mkdir homes
 
 # change ownership from root to git
 sudo chown -R git:git homes
+
+
+
+## client side remote add 
+git remote add origin git@laravelspace.com:putheng/test.git
